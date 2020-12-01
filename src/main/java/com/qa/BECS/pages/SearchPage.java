@@ -11,7 +11,7 @@ public class SearchPage extends BasePage {
     //Initializing the page object
     public SearchPage(){
         PageFactory.initElements(driver,this);
-    }
 
+    }
 
 }

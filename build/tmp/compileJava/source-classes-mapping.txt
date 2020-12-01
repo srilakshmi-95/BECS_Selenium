@@ -1,0 +1,8 @@
+com/qa/BECS/pages/LoginPage.java
+ com.qa.BECS.pages.LoginPage
+com/qa/BECS/pages/HomePage.java
+ com.qa.BECS.pages.HomePage
+com/qa/BECS/pages/SearchPage.java
+ com.qa.BECS.pages.SearchPage
+com/qa/BECS/pages/BasePage.java
+ com.qa.BECS.pages.BasePage

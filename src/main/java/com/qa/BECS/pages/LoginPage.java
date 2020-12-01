@@ -18,8 +18,6 @@ public class LoginPage extends BasePage{
     public LoginPage(){
         PageFactory.initElements(driver,this);
     }
-
-
     public String getLoginPageTitle(){
         return driver.getTitle();
     }
