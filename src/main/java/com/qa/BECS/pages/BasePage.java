@@ -2,13 +2,15 @@ package com.qa.BECS.pages;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.FileInputStream;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class BasePage {
-   public  WebDriver driver;
+   public static WebDriver driver;
    public static Properties prop;
 
 public BasePage(){
@@ -21,16 +23,15 @@ public BasePage(){
       e.printStackTrace();
    }
 }
-   public BasePage(WebDriver driver){
-      this.driver = driver;
-   }
 
 public static void initialize(){
 String browsername = prop.getProperty("browser");
 if(browsername.equals("chrome")){
    WebDriverManager.chromedriver().setup();
+   driver = new ChromeDriver();
 }else if(browsername.equals("firefox")){
    WebDriverManager.firefoxdriver().setup();
+   driver = new FirefoxDriver();
 }
    driver.manage().deleteAllCookies();
    driver.manage().window().maximize();
