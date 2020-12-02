@@ -8,12 +8,14 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseTest extends BasePage {
 
-    @BeforeMethod
+    @BeforeClass
     public void setup(){
+
         initialize();
     }
-    @AfterMethod
+    @AfterClass
     public void teardown(){
+
         closeBrowser();
     }
 }

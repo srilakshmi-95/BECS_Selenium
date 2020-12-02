@@ -16,8 +16,8 @@ public class BasePage {
 public BasePage(){
    try{
       prop = new Properties();
-      FileInputStream ip = new FileInputStream("C:\\Users\\srilakshmi\\IdeaProjects" +
-              "\\BECS\\src\\main\\resources\\config.properties");
+      FileInputStream ip = new FileInputStream("C:/Users/srilakshmi/IdeaProjects" +
+              "/BECS/src/main/resources/config.properties");
       prop.load(ip);
    }catch (Exception e){
       e.printStackTrace();

@@ -21,11 +21,10 @@ public class LoginPage extends BasePage{
     public String getLoginPageTitle(){
         return driver.getTitle();
     }
-    public HomePage login(String id, String pwd){
+    public void login(String id, String pwd){
         email.sendKeys(id);
         password.sendKeys(pwd);
         login.click();
-        return new HomePage();
     }
 
 }

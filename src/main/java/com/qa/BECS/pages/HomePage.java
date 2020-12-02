@@ -16,10 +16,9 @@ public class HomePage extends BasePage{
         PageFactory.initElements(driver,this);
     }
 
-    public SearchPage searchItem(String item){
+    public void searchItem(String item){
         search.sendKeys(item);
         searchBtn.click();
-        return new SearchPage();
     }
 
 }
