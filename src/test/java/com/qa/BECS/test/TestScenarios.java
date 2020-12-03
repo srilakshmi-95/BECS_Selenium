@@ -1,8 +1,6 @@
 package com.qa.BECS.test;
 
-import com.qa.BECS.pages.HomePage;
-import com.qa.BECS.pages.LoginPage;
-import com.qa.BECS.pages.SearchPage;
+import com.qa.BECS.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,6 +8,11 @@ public class TestScenarios extends BaseTest {
     LoginPage loginPage;
     HomePage homepage;
     SearchPage searchpage;
+    CheckOutPage checkoutpage;
+    AdderssPage addresspage;
+    OrderReviewPage Orderreviewpage;
+    LogoutPage logoutpage;
+
 
     @Test(priority = 2)
     public void verifyLoginPageTitle(){
@@ -38,11 +41,26 @@ public class TestScenarios extends BaseTest {
         searchpage = new SearchPage();
         searchpage.placeOrder();
     }
-    @Test(priority = 6)
-    public void verifyPlaceOrder()  {
-        searchpage = new SearchPage();
-        searchpage.placeOrder();
-    }
 
+    @Test(priority = 6)
+    public void verifyContinueOrder()  {
+        checkoutpage = new CheckOutPage();
+        checkoutpage.continueOrder();
+    }
+    @Test(priority = 7)
+    public void verifyAddress()  {
+        addresspage = new AdderssPage();
+        addresspage.addAddress();
+    }
+    @Test(priority = 8)
+    public void verifyReview()  {
+        Orderreviewpage = new OrderReviewPage();
+        Orderreviewpage.review();
+    }
+    @Test(priority = 8)
+    public void verifyAccountLogout()  {
+        logoutpage = new LogoutPage();
+        logoutpage.accountLogout();
+    }
 
 }

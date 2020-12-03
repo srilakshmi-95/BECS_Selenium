@@ -9,6 +9,8 @@ public class SearchPage extends BasePage {
     WebElement book;
     @FindBy(xpath = "//input[@id='BookCart_lvCart_imgPayment']")
     WebElement buy;
+    @FindBy(xpath ="//iframe[@class='cboxIframe']")
+    WebElement newFrame;
 
     //Initializing the page object
     public SearchPage() {
@@ -20,7 +22,7 @@ public class SearchPage extends BasePage {
     }
 
     public void placeOrder() {
-        driver.switchTo().frame("cbox1606909541347");
+        driver.switchTo().frame(newFrame);
         try {
             Thread.sleep(2000);
             buy.click();
