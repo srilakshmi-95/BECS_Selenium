@@ -12,7 +12,6 @@ public class CheckOutPage extends BasePage {
     public CheckOutPage() {
         PageFactory.initElements(driver, this);
     }
-
     public void continueOrder() {
         proceed.click();
     }

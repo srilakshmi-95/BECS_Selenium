@@ -3,6 +3,7 @@ package com.qa.BECS.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class AdderssPage extends BasePage{
     @FindBy(xpath = "//input[@id='ctl00_cpBody_txtNewRecipientName']")
@@ -26,14 +27,24 @@ public class AdderssPage extends BasePage{
     @FindBy(xpath = "//input[@id='ctl00_cpBody_imgSaveNew']")
     WebElement save;
 
-
     //Initializing the page object
     public AdderssPage() {
         PageFactory.initElements(driver, this);
     }
 
-    public void addAddress() {
-        name.sendKeys();
+    public void addAddress(String na, String comp, String str,
+                           String cou,String sta, String cit,String zi, String ph,String mob) {
+        name.sendKeys(na);
+        company.sendKeys(comp);
+        street.sendKeys(str);
+        Select select = new Select(country);
+        select.selectByVisibleText(cou);
+        Select select1 = new Select(state);
+        select.selectByVisibleText(sta);
+        city.sendKeys(cit);
+        zip.sendKeys(zi);
+        phone.sendKeys(ph);
+        mobile.sendKeys(mob);
     }
 
 }
