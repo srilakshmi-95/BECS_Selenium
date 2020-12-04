@@ -50,15 +50,16 @@ public class TestScenarios extends BaseTest {
     @Test(priority = 7)
     public void verifyAddress()  {
         addresspage = new AdderssPage();
-        addresspage.addAddress();
+        addresspage.addAddress(prop.getProperty("name"), prop.getProperty("company"), prop.getProperty("street"), prop.getProperty("country"),
+                prop.getProperty("state"), prop.getProperty("city"), prop.getProperty("zip"), prop.getProperty("phone"), prop.getProperty("mobile"));
     }
-    @Test(priority = 8)
+     @Test(priority = 8)
     public void verifyReview()  {
         Orderreviewpage = new OrderReviewPage();
         Orderreviewpage.review();
     }
-    @Test(priority = 8)
-    public void verifyAccountLogout()  {
+    @Test(priority = 9)
+    public void verifyAccountLogout() throws InterruptedException {
         logoutpage = new LogoutPage();
         logoutpage.accountLogout();
     }

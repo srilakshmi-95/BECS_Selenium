@@ -39,12 +39,13 @@ public class AdderssPage extends BasePage{
         street.sendKeys(str);
         Select select = new Select(country);
         select.selectByVisibleText(cou);
-        Select select1 = new Select(state);
-        select.selectByVisibleText(sta);
+        Select sele = new Select(state);
+        sele.selectByVisibleText(sta);
         city.sendKeys(cit);
         zip.sendKeys(zi);
         phone.sendKeys(ph);
         mobile.sendKeys(mob);
+        save.click();
     }
 
 }

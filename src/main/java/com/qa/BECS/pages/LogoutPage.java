@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LogoutPage extends BasePage {
-    @FindBy(xpath = "//body/form[@id='aspnetForm']/div[@id='site-wrapper']/div[2]/div[3]/div[2]/div[1]/div[4]/div[5]/a[1]/input[1]")
+    @FindBy(id ="ctl00_lnkbtnLogout")
     WebElement logout;
 
     //Initializing the page object
@@ -13,7 +13,8 @@ public class LogoutPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void accountLogout() {
+    public void accountLogout() throws InterruptedException {
+        Thread.sleep(2000);
         logout.click();
     }
 
