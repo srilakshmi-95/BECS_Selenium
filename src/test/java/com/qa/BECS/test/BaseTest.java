@@ -12,6 +12,7 @@ public class BaseTest extends BasePage {
     public void setup(){
 
         initialize();
+        loadLog4j();
     }
     @AfterClass
     public void teardown(){

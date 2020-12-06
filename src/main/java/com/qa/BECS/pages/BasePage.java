@@ -1,6 +1,8 @@
 package com.qa.BECS.pages;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class BasePage {
    public static WebDriver driver;
    public static Properties prop;
+   public static Logger logger;
 
 public BasePage(){
    try{
@@ -38,6 +41,11 @@ if(browsername.equals("chrome")){
    driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
    driver.get(prop.getProperty("url"));
+}
+
+public static void loadLog4j(){
+   String log4Jpath = System.getProperty("C:/Users/srilakshmi/IdeaProjects/BECS/src/main/resources/log4j.properties");
+   PropertyConfigurator.configure(log4Jpath);
 }
 
 public static void closeBrowser(){

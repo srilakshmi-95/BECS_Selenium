@@ -1,5 +1,6 @@
 package com.qa.BECS.pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,11 +18,13 @@ public class LoginPage extends BasePage{
     //Initializing the page object
     public LoginPage(){
         PageFactory.initElements(driver,this);
+        logger = Logger.getLogger(LoginPage.class.getName());
     }
     public String getLoginPageTitle(){
         return driver.getTitle();
     }
     public void login(String id, String pwd){
+        logger.info("Logging into account");
         email.sendKeys(id);
         password.sendKeys(pwd);
         login.click();

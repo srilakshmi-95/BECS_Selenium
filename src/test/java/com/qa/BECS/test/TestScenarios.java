@@ -57,6 +57,7 @@ public class TestScenarios extends BaseTest {
     public void verifyReview()  {
         Orderreviewpage = new OrderReviewPage();
         Orderreviewpage.review();
+        Assert.assertEquals(true,false);
     }
     @Test(priority = 9)
     public void verifyAccountLogout() throws InterruptedException {

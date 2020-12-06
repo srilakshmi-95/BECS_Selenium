@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="BECS Application Test Suite">
+
+    <listeners>
+        <listener class-name="com.qa.BECS.test.util.ListenerTest"/>
+    </listeners>
+
+    <test name="Free CRM App Test Cases" >
+
+        <classes>
+
+            <class name="com.qa.BECS.test.TestScenarios" />
+
+
+        </classes>
+
+    </test>
+
+</suite>
