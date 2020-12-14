@@ -23,6 +23,7 @@ public class LoginPage extends BasePage{
     public String getLoginPageTitle(){
         return driver.getTitle();
     }
+
     public void login(String id, String pwd){
         logger.info("Logging into account");
         email.sendKeys(id);

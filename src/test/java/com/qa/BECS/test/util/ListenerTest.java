@@ -1,6 +1,5 @@
 package com.qa.BECS.test.util;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;

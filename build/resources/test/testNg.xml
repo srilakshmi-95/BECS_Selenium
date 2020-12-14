@@ -6,9 +6,10 @@
 
     <listeners>
         <listener class-name="com.qa.BECS.test.util.ListenerTest"/>
+        <listener class-name="com.qa.BECS.test.util.ExtentReport"></listener>
     </listeners>
 
-    <test name="Free CRM App Test Cases" >
+    <test name="BECS Application Test Cases" >
 
         <classes>
 

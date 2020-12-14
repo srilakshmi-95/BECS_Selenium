@@ -1,7 +1,9 @@
 package com.qa.BECS.test;
 
 import com.qa.BECS.pages.*;
+import com.qa.BECS.test.util.TestUtil;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class TestScenarios extends BaseTest {
@@ -12,6 +14,7 @@ public class TestScenarios extends BaseTest {
     AdderssPage addresspage;
     OrderReviewPage Orderreviewpage;
     LogoutPage logoutpage;
+    String sheetName = "Login";
 
 
     @Test(priority = 2)
@@ -21,10 +24,15 @@ public class TestScenarios extends BaseTest {
         System.out.println(title);
         Assert.assertEquals(title,"Online BookStore India, Buy Books Online, Buy Book Online India - Bookswagon.com");
     }
-    @Test(priority = 1)
-    public void verifyLoginTest(){
+    @DataProvider
+    public Object[][] getLoginData() {
+        Object data[][] = TestUtil.getTestData(sheetName);
+        return data;
+    }
+    @Test(priority = 1, dataProvider = "getLoginData")
+    public void verifyLoginTest(String email,String password){
         loginPage = new LoginPage();
-        loginPage.login(prop.getProperty("email"), prop.getProperty("password"));
+        loginPage.login(email,password);
     }
     @Test(priority = 3)
     public void verifySearchTest(){
@@ -57,7 +65,6 @@ public class TestScenarios extends BaseTest {
     public void verifyReview()  {
         Orderreviewpage = new OrderReviewPage();
         Orderreviewpage.review();
-        Assert.assertEquals(true,false);
     }
     @Test(priority = 9)
     public void verifyAccountLogout() throws InterruptedException {
